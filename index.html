@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abismo: descenso al océano profundo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ── Partículas flotantes ── -->
+<div class="particles" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- ── Medidor de profundidad ── -->
+<aside class="gauge" aria-label="Medidor de profundidad">
+  <div class="gauge-num"><span id="depth">0</span><small>m</small></div>
+  <div class="gauge-track"><div class="gauge-fill" id="fill"></div></div>
+  <div class="gauge-label">PROF.</div>
+</aside>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-waves" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="wave wave-1">
+      <path d="M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,120 L0,120 Z"/>
+    </svg>
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="wave wave-2">
+      <path d="M0,70 C200,30 400,110 600,70 C800,30 1000,110 1200,70 C1300,50 1380,60 1440,65 L1440,120 L0,120 Z"/>
+    </svg>
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="wave wave-3">
+      <path d="M0,80 C360,40 720,120 1080,80 C1260,60 1380,75 1440,78 L1440,120 L0,120 Z"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Exploración oceánica</div>
+    <h1>ABISMO</h1>
+    <p class="hero-sub">Desciende 11 000 metros hasta el punto más oscuro del planeta. Cada scroll es un paso más hacia el fondo de la Tierra.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">11 km</span><span class="stat-lbl">profundidad máx.</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-lbl">zonas oceánicas</span></div>
+      <div class="stat"><span class="stat-num">&lt;5%</span><span class="stat-lbl">explorado</span></div>
+    </div>
+    <a class="btn" href="#zonas">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1v10.586L4.707 8.293l-1.414 1.414L8 14.414l4.707-4.707-1.414-1.414L8 11.586V1H8z"/></svg>
+      Iniciar descenso
+    </a>
+  </div>
+
+  <!-- Animales del hero: superficie -->
+  <div class="hero-animals" aria-hidden="true">
+    <div class="animal-swim a-dolphin">
+      <svg viewBox="0 0 120 60" width="120">
+        <path d="M10,30 Q30,10 60,28 Q80,38 100,25 Q110,20 115,28 Q110,35 100,32 Q80,45 60,35 Q30,50 10,30Z" fill="#3a8fa0" opacity="0.85"/>
+        <path d="M100,25 Q115,15 118,28 Q115,38 100,32Z" fill="#2d7a8a"/>
+        <ellipse cx="65" cy="29" rx="3" ry="3" fill="#1a4a55"/>
+        <path d="M60,28 Q65,18 75,22" stroke="#2d7a8a" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+    <div class="animal-swim a-fish1">
+      <svg viewBox="0 0 60 36" width="60">
+        <path d="M5,18 Q20,5 40,18 Q20,31 5,18Z" fill="#5bbfd4"/>
+        <path d="M40,12 L55,5 L50,18 L55,31 L40,24Z" fill="#4aafc4"/>
+        <ellipse cx="18" cy="17" rx="3" ry="3" fill="#0a3040"/>
+        <ellipse cx="19" cy="16" rx="1" ry="1" fill="white"/>
+      </svg>
+    </div>
+    <div class="animal-swim a-fish2">
+      <svg viewBox="0 0 50 30" width="50">
+        <path d="M4,15 Q15,3 32,15 Q15,27 4,15Z" fill="#f4a742" opacity="0.9"/>
+        <path d="M32,9 L46,3 L42,15 L46,27 L32,21Z" fill="#e09030"/>
+        <ellipse cx="16" cy="14" rx="2.5" ry="2.5" fill="#1a1000"/>
+        <path d="M20,10 Q25,7 30,10" stroke="#c07820" stroke-width="1.5" fill="none"/>
+        <line x1="16" y1="5" x2="16" y2="9" stroke="#e09030" stroke-width="1.5"/>
+        <line x1="22" y1="3" x2="21" y2="8" stroke="#e09030" stroke-width="1.5"/>
+        <line x1="28" y1="5" x2="26" y2="9" stroke="#e09030" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="animal-swim a-turtle">
+      <svg viewBox="0 0 80 60" width="80">
+        <ellipse cx="40" cy="32" rx="22" ry="16" fill="#4a8c5c"/>
+        <ellipse cx="40" cy="32" rx="18" ry="12" fill="#3a7a4a" opacity="0.6"/>
+        <ellipse cx="40" cy="26" rx="9" ry="7" fill="#5a9a6a"/>
+        <path d="M22,26 Q10,20 8,30 Q12,36 20,34" fill="#4a8c5c"/>
+        <path d="M58,26 Q70,20 72,30 Q68,36 60,34" fill="#4a8c5c"/>
+        <path d="M28,42 Q22,52 24,56" stroke="#4a8c5c" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M52,42 Q58,52 56,56" stroke="#4a8c5c" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="35" cy="24" rx="2" ry="2.5" fill="#1a3020"/>
+        <ellipse cx="45" cy="24" rx="2" ry="2.5" fill="#1a3020"/>
+        <path d="M37,27 Q40,30 43,27" stroke="#2a5030" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     ZONAS
+══════════════════════════════════════════ -->
+<main id="zonas"></main>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="end">
+  <div class="end-glow" aria-hidden="true"></div>
+  <div class="end-icon" aria-hidden="true">
+    <svg viewBox="0 0 80 80" width="80">
+      <!-- Submarino simple -->
+      <ellipse cx="40" cy="44" rx="28" ry="14" fill="#1a3a6a"/>
+      <rect x="34" y="28" width="12" height="16" rx="4" fill="#1a3a6a"/>
+      <rect x="36" y="24" width="2" height="8" fill="#2a5a9a"/>
+      <ellipse cx="54" cy="44" rx="4" ry="4" fill="#0a2040" opacity="0.7"/>
+      <ellipse cx="26" cy="44" rx="6" ry="6" fill="#0a2040" opacity="0.7"/>
+      <ellipse cx="38" cy="36" rx="3" ry="3" fill="#4a9ad4" opacity="0.8"/>
+      <ellipse cx="46" cy="36" rx="3" ry="3" fill="#4a9ad4" opacity="0.8"/>
+      <path d="M14,44 Q12,52 16,56 L26,54 L24,44Z" fill="#162a52"/>
+      <path d="M66,44 Q68,52 64,56 L54,54 L56,44Z" fill="#162a52"/>
+      <!-- luces -->
+      <circle cx="12" cy="44" r="3" fill="#7fe3f0" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+  <p>Has llegado al fondo del océano.</p>
+  <p class="end-sub">Menos del 5% de los océanos ha sido explorado. Queda un mundo entero por descubrir.</p>
+  <button class="btn" id="open-bot">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 1.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11z"/></svg>
+    Preguntarle a Sonda
+  </button>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     BOT — SONDA (Orca)
+══════════════════════════════════════════ -->
+
+<!-- FAB con orca pequeña -->
+<button class="fab" id="fab" aria-label="Abrir Sonda, la orca del abismo">
+  <span class="fab-orca" aria-hidden="true">
+    <svg viewBox="0 0 36 28" width="36" height="28">
+      <!-- cuerpo orca mini -->
+      <path d="M2,14 Q10,4 20,13 Q26,16 30,10 Q33,7 34,13 Q33,18 30,15 Q26,20 20,17 Q10,24 2,14Z" fill="white"/>
+      <!-- parche blanco ocular -->
+      <ellipse cx="26" cy="12" rx="3.5" ry="2.5" fill="white" opacity="0.9" transform="rotate(-10 26 12)"/>
+      <!-- aleta dorsal -->
+      <path d="M18,12 Q20,4 23,8" stroke="#111" stroke-width="1.5" fill="none"/>
+      <!-- ojo -->
+      <ellipse cx="27" cy="13" rx="1.5" ry="1.5" fill="#111"/>
+      <!-- aleta caudal -->
+      <path d="M2,14 Q-2,10 0,14 Q-2,18 2,14Z" fill="#1a1a1a"/>
+    </svg>
+  </span>
+  <span class="fab-label">Sonda</span>
+</button>
+
+<!-- Panel del bot -->
+<section class="bot" id="bot" aria-label="Sonda, asistente del abismo" hidden>
+
+  <!-- Header con orca grande -->
+  <div class="bot-head">
+    <div class="bot-avatar" aria-hidden="true">
+      <!-- Orca SVG animada -->
+      <svg class="orca-svg" viewBox="0 0 80 60" width="72" height="54">
+        <g class="orca-body-group">
+          <animateTransform attributeName="transform" type="translate"
+            values="0,0; 0,-3; 0,0" dur="2.8s" repeatCount="indefinite"
+            calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+          <!-- cuerpo negro principal -->
+          <path d="M4,30 Q20,10 44,26 Q56,32 66,22 Q72,17 75,26 Q72,34 66,29 Q56,38 44,31 Q20,48 4,30Z" fill="#0f0f14"/>
+          <!-- parche blanco ventral -->
+          <path d="M16,31 Q30,40 42,33" stroke="white" stroke-width="7" fill="none" opacity="0.92" stroke-linecap="round"/>
+          <!-- parche ocular blanco ovalado -->
+          <ellipse cx="60" cy="24" rx="5.5" ry="3.5" fill="white" opacity="0.95" transform="rotate(-15 60 24)"/>
+          <!-- aleta dorsal (se mueve con el cuerpo) -->
+          <path d="M42,26 Q46,10 52,18" stroke="#0f0f14" stroke-width="2.5" fill="#0f0f14"/>
+          <!-- cola bifurcada -->
+          <path d="M4,30 Q-4,22 -2,30 Q-4,38 4,30Z" fill="#0f0f14"/>
+          <!-- ojo -->
+          <ellipse cx="61" cy="25" rx="2.2" ry="2.2" fill="#0a0a10"/>
+          <ellipse cx="62" cy="24.2" rx="0.8" ry="0.8" fill="white" opacity="0.7"/>
+          <!-- boca / sonrisa sutil -->
+          <path d="M68,28 Q70,31 68,33" stroke="#1a1a20" stroke-width="1.2" fill="none"/>
+          <!-- aleta pectoral -->
+          <path d="M36,32 Q38,42 46,38" stroke="#0f0f14" stroke-width="2" fill="none"/>
+          <!-- burbuja 1 -->
+          <circle cx="74" cy="18" r="1.8" fill="none" stroke="rgba(127,227,240,0.6)" stroke-width="1">
+            <animate attributeName="cy" values="18;8;18" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <!-- burbuja 2 -->
+          <circle cx="70" cy="22" r="1.2" fill="none" stroke="rgba(127,227,240,0.5)" stroke-width="0.8">
+            <animate attributeName="cy" values="22;10;22" dur="4s" begin="1s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.7;0;0.7" dur="4s" begin="1s" repeatCount="indefinite"/>
+          </circle>
+          <!-- burbuja 3 -->
+          <circle cx="77" cy="24" r="1" fill="none" stroke="rgba(127,227,240,0.4)" stroke-width="0.7">
+            <animate attributeName="cy" values="24;12;24" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.6;0;0.6" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+      </svg>
+      <!-- anillos de agua bajo la orca -->
+      <div class="orca-ripple" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="bot-head-info">
+      <div class="bot-name-row">
+        <span class="bot-name">Sonda</span>
+        <span class="bot-online-badge">
+          <span class="bot-dot"></span>En línea
+        </span>
+      </div>
+      <div class="bot-desc">Orca del abismo · guía oceánica</div>
+    </div>
+
+    <button class="bot-close-btn" id="close-bot" aria-label="Cerrar chat">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="1" y1="1" x2="13" y2="13"/>
+        <line x1="13" y1="1" x2="1" y2="13"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mensajes -->
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+
+  <!-- Chips de sugerencias -->
+  <div class="chips" id="chips"></div>
+
+  <!-- Input -->
+  <form id="form" autocomplete="off">
+    <div class="input-wrapper">
+      <input id="input" type="text" placeholder="Pregúntale algo a Sonda…" aria-label="Tu pregunta">
+    </div>
+    <button class="send-btn" type="submit" aria-label="Enviar pregunta">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M1 1l14 7L1 15V9.5l9-1.5-9-1.5V1z"/>
+      </svg>
+    </button>
+  </form>
+
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
