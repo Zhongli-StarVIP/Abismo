@@ -1,0 +1,22 @@
+# Archivos comprimidos
+*.zip
+*.rar
+*.7z
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Node (por si se agrega después)
+node_modules/
+npm-debug.log*
+
+# Logs
+*.log
